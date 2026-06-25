@@ -1,0 +1,34 @@
+# Virtual Environment
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*__pycache__*
+
+# Deep Learning Weights & Checkpoints (Too large for standard Git)
+*.pth
+*.pt
+experiment/
+vgg_normalised.pth
+
+# User Uploads (Don't commit private user data!)
+static/uploads/
+uploads/
+
+# Datasets (Too large for Git - usually downloaded separately)
+content_data/
+style_data/
+
+# Environment Variables / Secrets
+.env
+.flaskenv
+
+# IDE and OS Specific files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
