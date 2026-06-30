@@ -7,6 +7,8 @@ from utils.models import *
 import torch.optim as optim
 from tqdm import tqdm
 from torchvision.utils import save_image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 def parse_arguments():
@@ -143,10 +145,10 @@ def main():
             running_sloss += loss_s.item()
             
         scheduler.step()
-        
-        running_loss /= len(content_dataloader)    
-        running_closs /= len(content_dataloader)    
-        running_sloss /= len(content_dataloader)    
+        total_steps = min(len(content_dataloader), len(style_dataloader))
+        running_loss /= total_steps   
+        running_closs /= total_steps   
+        running_sloss /= total_steps   
         
         if (epoch+1)%args.log_interval == 0:
             tqdm.write(f'Iter {epoch+1}: Loss: {running_loss:4f}, Content Loss: {running_closs:4f}, Style Loss: {running_sloss:4f}')
