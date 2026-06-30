@@ -10,7 +10,6 @@ __pycache__/
 *__pycache__*
 
 # Deep Learning Weights & Checkpoints (Too large for standard Git)
-*.pth
 *.pt
 
 # User Uploads (Don't commit private user data!)
