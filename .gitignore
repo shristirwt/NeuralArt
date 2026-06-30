@@ -12,7 +12,6 @@ __pycache__/
 # Deep Learning Weights & Checkpoints (Too large for standard Git)
 *.pth
 *.pt
-vgg_normalised.pth
 
 # User Uploads (Don't commit private user data!)
 static/uploads/
